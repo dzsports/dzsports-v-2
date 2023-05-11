@@ -1,0 +1,61 @@
+.title {
+    font-weight: 600;
+    border : 2px solid;
+    margin-bottom: 30px;
+    transition: var(--transition);
+    transition-delay: .1s;
+    z-index: 1;
+}
+.title:hover {
+    color: #fff;
+}
+.title::after, 
+.title::before {
+    content: '';
+    position: absolute;
+    height: 108%;
+    width: 3.5px;
+    background-color: var(--main-color);
+    top: -2px;
+    transition: var(--transition);
+} 
+.title::before {
+    right: -15px;
+}
+.title::after {
+    left: -15px;
+}
+.title:hover::after , 
+.title:hover::before {
+    width: 52%;
+    z-index: -1;
+} 
+.title:hover::before {
+    right: 0;
+} 
+.title:hover::after { 
+    left: 0;
+} 
+
+/* Publish.jsx */
+
+.publish {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.publish textarea {
+    min-height: 130px;
+    border-radius: 10px;
+    background-color: #fafafa;
+}
+.publish .footerPost label, 
+.publish .footerPost button {
+    flex-basis: 50%;
+    background-color: var(--main-color);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}

@@ -1,0 +1,106 @@
+.userNav  {
+    background-color: #fff;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    top: 0;
+    transition: var(--transition);
+}
+.userNav .head {
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 20px;
+    align-items: center;
+    border-radius: 8px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+.userNav .userIcon {
+    font-size: 25px;
+}
+.userNav .nav div:nth-child(2) a {
+    font-size: 24px;
+    line-height: 32px;
+    overflow: hidden;
+}
+.userNav .options {
+    position: fixed;
+    background-color: var(--main-color);
+    border-radius: 8px;
+    top: 50px;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+}
+.userNav .options.show{
+    display: flex;
+}
+.userNav .options .option{
+    font-size: 14px !important;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: var(--transition);
+}
+.userNav .options .option:hover {
+    background-color: var(--sec-color);
+}
+@media (min-width:768px) { 
+    .nav > div:nth-child(2) a:hover {
+        color: var(--sec-color) !important;
+    }
+    .nav > div:nth-child(2) a::before {
+        content: '';
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background-color: var(--sec-color);
+        top: 2px;
+        left: -100%;
+        transition: var(--transition);
+    }
+    .nav > div:nth-child(2) a:hover::before {
+        left: 0;
+    }
+    .nav > div:nth-child(2) a.changeBg:hover {
+        background-color: #fafafa;
+    }
+}
+@media (max-width:767px) {
+    .userNav  {
+        background-color: transparent;
+    }
+    .userNav .nav {
+        position: fixed;
+        bottom: 0px;
+        background-color: var(--main-color);
+        padding: 0 10px;
+        gap: 5px;
+    }
+    .userNav .username {
+        display: none;
+    }
+    .userNav .nav > div:nth-child(2) {
+        flex-basis: 75%;
+        order: 2;
+    }
+    .userNav .nav > div:nth-child(2) a {
+        flex-basis:calc(100% / 3);
+        text-align: center;
+    }
+    .userNav .nav > div:nth-child(3) {
+        flex-basis: 25%;
+        order: 1;
+    }
+    .userNav .nav > div:nth-child(2) a ,
+    .userNav .nav > div:nth-child(3) i {
+        font-size: 30px;
+        color: #fff;
+    }
+    .userNav .options.show {
+        bottom: 70px;
+        top: auto;
+        width: 182px;
+        right: 19px;
+    }
+}
